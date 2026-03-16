@@ -13,14 +13,14 @@ public class Filme {
         System.out.println("Duração em minutos: " + totalEmMinutos);
     }
 
-    void avalia(nota){
+    void avalia(double nota){
 
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes++;
 
     }
 
-    pegaMedia(){
+    double pegaMedia(){
 
         return somaDasAvaliacoes / totalDeAvaliacoes;
 

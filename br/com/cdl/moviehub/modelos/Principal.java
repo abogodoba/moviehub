@@ -1,16 +1,23 @@
 package br.com.cdl.moviehub.modelos;
+import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Filme filme1 = new Filme();
-            filme1.setNome("O Poderoso Chefão");
-            filme1.setAnoDeLancamento(1972);
-            filme1.setTotalEmMinutos(175);
+        System.out.println("Digite o nome do filme:");
+        filme1.setNome(scanner.nextLine());
+        System.out.println("Digite o ano de lançamento do filme:");
+        filme1.setAnoDeLancamento(scanner.nextInt());
+        System.out.println("Digite a duração do filme em minutos:");
+        filme1.setTotalEmMinutos(scanner.nextInt());
+        System.out.println("Digite a quantidade de avaliações:");
+        int qtd= scanner.nextInt();
+        for (int i=0;i<qtd;i++){
+            System.out.println("Digite a nota da avaliação " + (i+1) + ":");
+            filme1.avalia(scanner.nextDouble());
+        }
 
         filme1.exibeFichaTecnica();
-        //Lançando as avaliações do filme
-        filme1.avalia(8);
-        filme1.avalia(9.5);
-        filme1.avalia(10);
 
         //Exibindo as avaliacoes do filme
 

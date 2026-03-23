@@ -16,7 +16,7 @@ public class Principal {
             System.out.println("Digite a nota da avaliação " + (i+1) + ":");
             filme1.avalia(scanner.nextDouble());
         }
-
+        scanner.close();
         filme1.exibeFichaTecnica();
 
         //Exibindo as avaliacoes do filme

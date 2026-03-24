@@ -41,7 +41,13 @@ public class Filme {
     }
 
     public void setAnoDeLancamento(int anoDeLancamento) {
-        this.anoDeLancamento = anoDeLancamento;
+        //ano de invencao do cinema: 1888
+        if (anoDeLancamento>1888) {
+            this.anoDeLancamento = anoDeLancamento;
+        } else {
+            System.out.println("Ano de lançamento inválido!");
+        }
+        
     }
 
     public int getTotalEmMinutos() {
@@ -49,8 +55,14 @@ public class Filme {
     }
 
     public void setTotalEmMinutos(int totalEmMinutos) {
-        this.totalEmMinutos = totalEmMinutos;
+        //duração mínima de um filme: 1 minuto
+        if (totalEmMinutos>0) {
+            this.totalEmMinutos = totalEmMinutos;
+         } else {
+            System.out.println("Duração do filme inválida!");
+        
     }
+}
 
     public int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;

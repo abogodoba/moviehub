@@ -1,7 +1,11 @@
-Projeto criado para a disciplina de POO
+🎬 CineVault
+🎓 Projeto acadêmico —  (AP2) | Faculdade CDL — Fortaleza
 
-Equipe
+Disciplina - PROGRAMAÇÃO ORIENTADA A OBJETOS
+👥 Equipe
+Nome
+Jonatha de araujo - 2020011821
 
-matricula Nome
-matricula 2 Nome 2
-matrícula 3 Nome 3
+Sistema de cadastro e gerenciamento de conteúdos audiovisuais desenvolvido em Java puro, sem frameworks ou dependências externas.
+
+Permite cadastrar filmes e séries, registrar avaliações e calcular o tempo total de conteúdo assistido.

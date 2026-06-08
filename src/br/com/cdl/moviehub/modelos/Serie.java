@@ -6,6 +6,15 @@ public class Serie extends Titulo {
     private int minutosPorEpisodio;
     private boolean ativa;
 
+    // MÉTODO PARA ALTERAR O NOME E TODAS AS INFORMAÇÕES DA SÉRIE
+    public void atualizarDados(String novoNome, int novasTemporadas, int novosEpisodios, int novosMinutos) {
+        this.setNome(novoNome); // Altera o nome que vem da classe Titulo
+        this.temporadas = novasTemporadas;
+        this.episodiosPorTemporada = novosEpisodios;
+        this.minutosPorEpisodio = novosMinutos;
+    }
+
+    // Getters e Setters
     public int getTemporadas() {
         return temporadas;
     }
@@ -31,8 +40,17 @@ public class Serie extends Titulo {
         this.ativa = ativa;
     }
    
-    //duração total da série
+    // Duração total da série
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;     
+    }
+
+    // MÉTODO EXEMPLO: Mostra os dados da série na tela
+    public void exibirFichaTecnica() {
+        System.out.println("--- DADOS DA SÉRIE ---");
+        System.out.println("Nome da Série: " + this.getNome());
+        System.out.println("Temporadas: " + this.temporadas);
+        System.out.println("Duração Total: " + this.getDuracaoEmMinutos() + " minutos");
+        System.out.println("----------------------");
     }
 }

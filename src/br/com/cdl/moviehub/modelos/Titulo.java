@@ -1,4 +1,5 @@
 package br.com.cdl.moviehub.modelos;
+
 public class Titulo {
      //declarando os atributos da classe
     private String nome;
@@ -6,25 +7,42 @@ public class Titulo {
     private double somaDasAvaliacoes,nota, pegaMedia;
     private boolean incluidoNoPlano;
 
-    //criando as ações da classe
+    // ====================================================================
+    // NOVO MÉTODO: AÇÃO PARA ALTERAR OS DADOS ORIGINAIS DE QUALQUER TÍTULO
+    // ====================================================================
+    public void atualizarDadosBase(String novoNome, int novoAno, int novosMinutos) {
+        this.nome = novoNome;
+        
+        // Usamos as mesmas validações que você já tinha criado abaixo
+        if (novoAno > 1888) {
+            this.anoDeLancamento = novoAno;
+        } else {
+            System.out.println("Erro ao alterar: Ano de lançamento inválido!");
+        }
 
+        if (novosMinutos > 0) {
+            this.totalEmMinutos = novosMinutos;
+        } else {
+            System.out.println("Erro ao alterar: Duração inválida!");
+        }
+        System.out.println(">>> [Sucesso] Dados originais do título alterados para: " + novoNome);
+    }
+    // ====================================================================
+
+    //criando as ações da classe
     public void exibeFichaTecnica(){
-        System.out.println("Nome do filme: " + nome);
+        System.out.println("Nome do filme/série: " + nome);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
         System.out.println("Duração em minutos: " + totalEmMinutos);
     }
 
     public void avalia(double nota){
-
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes++;
-
     }
 
     public double pegaMedia(){
-
         return somaDasAvaliacoes / totalDeAvaliacoes;
-
     }
 
     public String getNome() {
@@ -40,13 +58,11 @@ public class Titulo {
     }
 
     public void setAnoDeLancamento(int anoDeLancamento) {
-        //ano de invencao do cinema: 1888
         if (anoDeLancamento>1888) {
             this.anoDeLancamento = anoDeLancamento;
         } else {
             System.out.println("Ano de lançamento inválido!");
         }
-        
     }
 
     public int getTotalEmMinutos() {
@@ -54,14 +70,12 @@ public class Titulo {
     }
 
     public void setTotalEmMinutos(int totalEmMinutos) {
-        //duração mínima de um filme: 1 minuto
         if (totalEmMinutos>0) {
             this.totalEmMinutos = totalEmMinutos;
          } else {
             System.out.println("Duração do filme inválida!");
-        
+         }
     }
-}
 
     public int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;
